@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const TrafficLight = (props) => {
-
     const clickRedLight = (e) => {
-        props.setColor("red")
-        return props.color
+        props.color == "red" ? props.setColor("") : props.setColor("red")
     }
     const clickYellowLight = (e) => {
-        props.setColor("yellow")
+        props.color == "yellow" ? props.setColor("") : props.setColor("yellow")
     }
     const clickGreenLight = (e) => {
-        props.setColor("green")
+        props.color == "green" ? props.setColor("") : props.setColor("green")
+    }
+    const clickPurpleLight = (e) => {
+        props.color == "purple" ? props.setColor("") : props.setColor("purple")
     }
 
     return (
@@ -21,17 +22,30 @@ export const TrafficLight = (props) => {
                     className={`red light bg-danger rounded-circle ${props.color == "red" ? "selected" : ""}`}
                     role="button"
                     style={{ width: "80px", height: "80px" }}
-                    onClick={clickRedLight}></div>
+                    onClick={clickRedLight}>
+                </div>
                 <div
                     className={`yellow light bg-warning rounded-circle ${props.color == "yellow" ? "selected" : ""}`}
                     role="button"
                     style={{ width: "80px", height: "80px" }}
-                    onClick={clickYellowLight}></div>
+                    onClick={clickYellowLight}>
+                </div>
                 <div
                     className={`green light bg-success rounded-circle ${props.color == "green" ? "selected" : ""}`}
                     role="button"
                     style={{ width: "80px", height: "80px" }}
-                    onClick={clickGreenLight}></div>
+                    onClick={clickGreenLight}>
+                </div>
+                <div
+                    className={
+                        `purple light rounded-circle 
+                        ${props.color == "purple" ? "selected" : ""} 
+                        ${props.addPurple ? "" : "d-none"}`
+                    }
+                    role="button"
+                    style={{ width: "80px", height: "80px", backgroundColor: "purple" }}
+                    onClick={clickPurpleLight}>
+                </div>
             </div>
         </div>
     );

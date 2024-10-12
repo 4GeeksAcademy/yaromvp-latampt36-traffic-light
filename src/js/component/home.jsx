@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 
-//include images into your bundle
 import { TrafficLight } from "./TrafficLight";
+import { ButtonPurple } from "./ButtonPurple";
 
 //create your first component
 const Home = () => {
 
-	const [ color, setColor ] = useState("");
+	const [color, setColor] = useState("");
+	const [addPurple, setAddPurple] = useState(false);
 
 	return (
-		<TrafficLight color={color} setColor={setColor} />
+		<div>
+			<TrafficLight color={color} setColor={setColor} addPurple={addPurple} />
+			<ButtonPurple setAddPurple={setAddPurple} />
+		</div>
 	);
 };
 
