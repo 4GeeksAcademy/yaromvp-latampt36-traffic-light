@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export const ButtonPurple = (props) => {
+
     const clickAddPurpleLight = (e) => {
         props.setAddPurple(
             (prev) => !prev
         )
-        console.log(props.addPurple)
     }
 
     return (

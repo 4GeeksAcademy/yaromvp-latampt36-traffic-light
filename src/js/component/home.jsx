@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import { TrafficLight } from "./TrafficLight";
 import { ButtonPurple } from "./ButtonPurple";
+import { ButtonAutomatic } from "./ButtonAutomatic";
 
-//create your first component
 const Home = () => {
 
 	const [color, setColor] = useState("");
@@ -11,8 +11,9 @@ const Home = () => {
 
 	return (
 		<div>
-			<TrafficLight color={color} setColor={setColor} addPurple={addPurple} />
+			<TrafficLight color={color} setColor={setColor} addPurple={addPurple} asdasd={"qweqwe"} />
 			<ButtonPurple setAddPurple={setAddPurple} />
+			<ButtonAutomatic autoColor={color} setAutoColor={setColor} />
 		</div>
 	);
 };
