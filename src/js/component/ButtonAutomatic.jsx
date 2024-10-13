@@ -12,7 +12,7 @@ export const Clock = (props) => {
 
     return (
         <div>
-            <h1>{time}</h1>
+            <h1 className="d-none">{time}</h1>
         </div>
     );
 };
@@ -24,11 +24,7 @@ export const ButtonAutomatic = (props) => {
 
     return (
         <div className="d-flex justify-content-center mt-3">
-            <button
-                className="btn btn-primary"
-                onClick={clickAutomatic}
-            >Automatic
-            </button>
+            <button className="btn btn-primary" onClick={clickAutomatic}>Automatic</button>
             <Clock />
         </div>
     );
